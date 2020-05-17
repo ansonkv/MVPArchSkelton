@@ -11,6 +11,7 @@ import app.whoknows.android.R
 import app.whoknows.android.ui.base.BaseView
 import app.whoknows.android.util.AppConstants
 import app.whoknows.android.util.Dialogs
+import app.whoknows.android.util.LangUtils
 
 
 open class BaseActivity : AppCompatActivity(),
@@ -28,7 +29,7 @@ open class BaseActivity : AppCompatActivity(),
             overridePendingTransition(R.anim.enter, R.anim.no_change)
 
 
-//        LangUtils.changeCurrentLocale(this, LangUtils.getCurrentAppLang())
+        LangUtils.changeCurrentLocale(this, LangUtils.getCurrentAppLang())
     }
 
     fun initToolBar(toolbar: Toolbar, title: String, allowBack: Boolean, isSetCloseIcon: Boolean = false, isWhiteTheme: Boolean = false) {
