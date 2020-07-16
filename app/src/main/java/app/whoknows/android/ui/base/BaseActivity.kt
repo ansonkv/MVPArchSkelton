@@ -27,15 +27,11 @@ open class BaseActivity : AppCompatActivity(),
             overridePendingTransition(R.anim.slide_in_up, R.anim.no_change)
         else
             overridePendingTransition(R.anim.enter, R.anim.no_change)
-
-
         LangUtils.changeCurrentLocale(this, LangUtils.getCurrentAppLang())
     }
 
     fun initToolBar(toolbar: Toolbar, title: String, allowBack: Boolean, isSetCloseIcon: Boolean = false, isWhiteTheme: Boolean = false) {
-
         setSupportActionBar(toolbar)
-
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
       /*  if (allowBack) {
@@ -79,24 +75,19 @@ open class BaseActivity : AppCompatActivity(),
         if (allowAnim)
             fragmentTransaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
 
-
         fragmentTransaction.replace(containerId, fragment)
         fragmentTransaction.commitAllowingStateLoss()
-
         return fragment
     }
 
     override fun showPop(message: String?) {
-
         Dialogs.alertDialog(this, message, getString(R.string.oke_text), null)
     }
 
     override fun showLoading() {
         if (loadingDialog == null)
-
             loadingDialog = Dialogs.createCustomDialog(this, R.layout.dialog_loading,
                 0, true, false, false)
-
         loadingDialog!!.show()
     }
 
@@ -130,8 +121,7 @@ open class BaseActivity : AppCompatActivity(),
     }
 
     override fun showNoNetwork() {
-
-
+        showPop(getString(R.string.no_network_message))
     }
 
 

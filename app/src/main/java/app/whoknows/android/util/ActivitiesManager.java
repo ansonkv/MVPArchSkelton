@@ -156,10 +156,6 @@ public class ActivitiesManager {
             final Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url));
 
             context.startActivity(intent);
-
         }
-
-
     }
-
 }

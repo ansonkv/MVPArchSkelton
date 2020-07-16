@@ -10,7 +10,7 @@ class WhoKnows : Application() {
     companion object {
         private lateinit var appComponent: AppComponent
 
-        private lateinit var appContext: WhoKnows
+        public lateinit var appContext: WhoKnows
 
         private lateinit var db: AppDataBase
 
@@ -31,7 +31,7 @@ class WhoKnows : Application() {
         appComponent=initDagger(this)
         appPref= AppPref(this)
     }
-    fun initDagger(application: WhoKnows): AppComponent {
+    private fun initDagger(application: WhoKnows): AppComponent {
         return DaggerAppComponent.builder().application(application).build()
     }
 

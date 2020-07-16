@@ -2,5 +2,7 @@
     <string name="app_name">WhoKnows</string>
     <string name="oke_text">OK</string>
 
+    <string name="no_network_message">No Network.. \nPlease try Again</string>
+    <string name="something_went_wrong">Something went wrong!!!</string>
 
 </resources>

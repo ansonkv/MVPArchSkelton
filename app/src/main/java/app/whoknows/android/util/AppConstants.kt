@@ -7,7 +7,8 @@ object AppConstants {
 
     /**__________PREFERE KEYS_____________*/
     const val PREF_KEY_SELECTED_LANG = "FINDOOD_SELECTED_LANG"
-
+    const val KEY_IS_USER_LOGGED_IN = "IS_LOGGED_IN"
+    const val PREF_ACCOUNT = "LOGGED_ACCOUNT"
 
     /**__________BUNDLE KEYS_____________*/
     const val KEY_SCREEN_NAME = "SCREEN_TITLE"

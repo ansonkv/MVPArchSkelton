@@ -40,9 +40,7 @@ abstract class BaseFragment : Fragment(), BaseView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         initView()
-
     }
 
 
@@ -83,8 +81,6 @@ abstract class BaseFragment : Fragment(), BaseView {
         mainView.visibility = View.GONE
 
         loaderView.visibility = View.GONE
-
-
     }
 
     abstract fun getMainLayout(): Int
@@ -97,7 +93,6 @@ abstract class BaseFragment : Fragment(), BaseView {
         loaderView.visibility = View.GONE
 
         errorView!!.visibility = View.GONE
-
 
     }
 
@@ -119,7 +114,6 @@ abstract class BaseFragment : Fragment(), BaseView {
 
         errorView!!.visibility = View.GONE
 
-
     }
 
     override fun showLoading() {
@@ -132,7 +126,6 @@ abstract class BaseFragment : Fragment(), BaseView {
             errorView!!.visibility = View.GONE
 
         loaderView.visibility = View.VISIBLE
-
     }
 
     override fun showLoading(context: Context) {
@@ -140,7 +133,6 @@ abstract class BaseFragment : Fragment(), BaseView {
         if (loadingDialog == null)
             loadingDialog = Dialogs.createCustomDialog(context, R.layout.dialog_loading,
                     0, true, false, false)
-
         loadingDialog!!.show()
     }
 
@@ -152,16 +144,13 @@ abstract class BaseFragment : Fragment(), BaseView {
             loadingDialog!!.dismiss()
         if (errorView != null)
             errorView!!.visibility = View.GONE
-
     }
 
     override fun showLoaderDialog() {
 
         if (loadingDialog == null)
-
             loadingDialog = Dialogs.createCustomDialog(activity, R.layout.dialog_loading,
                     0, true, true, false)
-
         loadingDialog!!.show()
 
     }
@@ -169,11 +158,12 @@ abstract class BaseFragment : Fragment(), BaseView {
     override fun hideLoaderDialog() {
         if (loadingDialog != null && loadingDialog!!.isShowing)
             loadingDialog!!.dismiss()
-
     }
 
     override fun showPop(message: String?) {
         Dialogs.alertDialog(activity, message, getString(R.string.oke_text), null)
-
+    }
+    override fun showNoNetwork() {
+        showPop(getString(R.string.no_network_message))
     }
 }

@@ -3,6 +3,7 @@
     package="app.whoknows.android">
 
     <dist:module dist:instant="true" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:name=".WhoKnows"
         android:allowBackup="true"

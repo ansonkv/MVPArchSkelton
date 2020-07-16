@@ -1,13 +1,8 @@
-package com.waleed.app.util
+package app.whoknows.android.util
 
-import android.animation.Animator
 import android.content.Context
 import android.text.Editable
 import android.view.View
-import android.view.animation.AccelerateInterpolator
-import android.view.animation.BounceInterpolator
-import android.view.animation.LinearInterpolator
-import android.view.animation.OvershootInterpolator
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import app.whoknows.android.R

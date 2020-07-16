@@ -13,7 +13,6 @@ import app.whoknows.android.util.AppConstants
 @SuppressLint("Registered")
 class CommonActivity : BaseActivity() {
 
-
     private var currentFragment: Fragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,10 +55,8 @@ class CommonActivity : BaseActivity() {
                     currentFragment!!, tag).commit()
 
             }
-
         }
     }
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -68,7 +65,6 @@ class CommonActivity : BaseActivity() {
             currentFragment!!.onActivityResult(requestCode, resultCode, data)
 
     }
-
 
     companion object {
         val FRAGMENT_NAME_TAG = "FRAGMENT_NAME_TAG"
