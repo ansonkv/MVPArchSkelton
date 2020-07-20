@@ -96,10 +96,8 @@ open class BaseActivity : AppCompatActivity(),
     }
 
     override fun hideLoading() {
-
         if (loadingDialog != null)
             loadingDialog!!.dismiss()
-
     }
 
     override fun showLoaderDialog() {
@@ -123,6 +121,4 @@ open class BaseActivity : AppCompatActivity(),
     override fun showNoNetwork() {
         showPop(getString(R.string.no_network_message))
     }
-
-
 }
