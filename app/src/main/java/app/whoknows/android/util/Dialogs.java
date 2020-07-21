@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
+
 import java.lang.reflect.Field;
 
 import app.whoknows.android.R;
@@ -48,22 +49,30 @@ public class Dialogs {
         );
 
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
         dialog.setContentView(layoutId);
+
         dialog.getWindow().getAttributes().windowAnimations = animationStyleId;
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
         if (isBottom){
+
             WindowManager.LayoutParams lp = dialog.getWindow().getAttributes();
             lp.gravity = Gravity.BOTTOM;
             lp.width = WindowManager.LayoutParams.MATCH_PARENT;
             lp.height = WindowManager.LayoutParams.MATCH_PARENT;
             lp.dimAmount = 0.7f;
             dialog.getWindow().setAttributes(lp);
+
         }
+
+
 
         if (isBlureBehind)
             dialog.getWindow().getAttributes().dimAmount = 0.4f;
+
         dialog.setCancelable(cancelable);
+
         return dialog;
 
     }
@@ -71,21 +80,30 @@ public class Dialogs {
 
     public static void alertDialog(Context mContext, String message, String btnMsg, DialogInterface.OnClickListener onClickListener) {
 
+
         android.app.AlertDialog.Builder dialogBuilder = new android.app.AlertDialog.Builder(mContext);
+
         dialogBuilder.setMessage(message);
 
         if (onClickListener != null) {
+
             dialogBuilder.setPositiveButton(btnMsg, onClickListener);
+
         } else {
+
             dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+
                     dialog.dismiss();
+
                     Dialogs.dialog = null;
                 }
             });
+
         }
+
         dialog = dialogBuilder.create();
         dialog.setOnShowListener( new DialogInterface.OnShowListener() {
             @SuppressLint("ResourceAsColor")
@@ -97,28 +115,44 @@ public class Dialogs {
         if (!dialog.isShowing())
             dialog.show();
 
+
     }
 
     public static android.app.AlertDialog alertDialogWithTwoButton(Context mContext, String message, String positiveBtnMsg,
                                                                    DialogInterface.OnClickListener onClickListener,
                                                                    String negativeBtnMsg, DialogInterface.OnClickListener negativeClickListener) {
 
+
         android.app.AlertDialog.Builder dialogBuilder = new android.app.AlertDialog.Builder(mContext);
+
         dialogBuilder.setMessage(message);
+
+
         dialogBuilder.setPositiveButton(positiveBtnMsg, onClickListener);
 
+
         if (negativeClickListener != null) {
-            dialogBuilder.setNegativeButton(negativeBtnMsg, negativeClickListener);
+
+            dialogBuilder.setNegativeButton(negativeBtnMsg, onClickListener);
+
+
         } else {
+
             dialogBuilder.setNegativeButton(negativeBtnMsg, new DialogInterface.OnClickListener() {
+
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+
                     dialog.dismiss();
+
                     Dialogs.dialog = null;
                 }
             });
+
         }
+
         return dialogBuilder.create();
+
     }
 
     public static ProgressDialog getProgressDialog(Context context,
@@ -130,6 +164,7 @@ public class Dialogs {
         return pDialog;
     }
 
+
     public static void showProgressDialogWithTwoButtons(
             Activity context,
             String title,
@@ -140,6 +175,7 @@ public class Dialogs {
             final Runnable okMethod,
             final Runnable cancelMethod) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+
         alertDialogBuilder.setTitle(title);
         alertDialogBuilder.setMessage(message);
         // set positive button: Yes response_message
